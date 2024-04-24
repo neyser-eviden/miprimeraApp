@@ -10,10 +10,30 @@ export class EmpleadoComponent {
   nombre:string = "Neyser";
   apellido:string = "Huamán";
   private edad: number = 19;
-  empresa: string = "Eviden";
+  empresa:string = "Eviden";
 
   getEdad(){
     return this.edad;
   }
+
+  habilitacionCuadro=false;
+
+  usuarioRegistrado = false;
+
+  textoRegistro="No hay nadie registrado";
+
+  getRegistroUsuario(){
+    this.usuarioRegistrado = false;
+  }
+
+  setUsuarioRegistrado(event:Event){
+    if ((<HTMLInputElement>event.target).value == "SI") {
+      this.textoRegistro = "Usuarios registrado"
+    } else{
+      this.textoRegistro="Usuario NO registrado";
+    }
+  }
+
+  
 
 }

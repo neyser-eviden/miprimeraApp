@@ -3,4 +3,14 @@
     <p>Apellido: {{apellido}} </p>
     <p>Edad: {{ getEdad()<18?"Es menor de Edad":"Es mayor de Edad" }} </p>
     <p>Empresa: {{empresa}} </p>
+    <!-- Introduce la Empresa: <input type="text" #empresa (keyup)="0" [disabled]="habilitacionCuadro"> -->
+    Introduce la emrpesa: <input type="text" [(ngModel)]="empresa">
+    
+    <br>
+    <p>Estado: {{textoRegistro}} </p>
+
+    Registrado: <input type="radio" name="nRegistro" value="SI" id="registro" [checked]="usuarioRegistrado" (click)="setUsuarioRegistrado($event)">
+    No Registrado: <input type="radio" name="nRegistro" value="NO" (click)="setUsuarioRegistrado($event)">
+    {{  getRegistroUsuario() }}
+
 </div>
